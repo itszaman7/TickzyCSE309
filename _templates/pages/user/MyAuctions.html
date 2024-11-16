@@ -1,0 +1,208 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "Home" %}{% endblock %}
+
+{% block content%}
+<div class="tab-content">
+    <!--begin::Tap pane-->
+    <div class="tab-pane fade show active" id="kt_auctions_widget_16_tab_1">
+        <!--begin::Table container-->
+        <div class="table-responsive">
+            <!--begin::Table-->
+            <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+                <!--begin::Table head-->
+                <thead>
+                    <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
+                        <th class="p-0 pb-3 min-w-150px text-start">AUCTION ITEM</th>
+                        <th class="p-0 pb-3 min-w-100px text-end pe-13">CURRENT BID</th>
+                        <th class="p-0 pb-3 w-125px text-end pe-7">TIME LEFT</th>
+                        <th class="p-0 pb-3 w-125px text-end">YOUR BID</th>
+                        <th class="p-0 pb-3 w-125px text-end">HIGHEST BID</th>
+                        <th class="p-0 pb-3 w-50px text-end">BID</th>
+                    </tr>
+                </thead>
+                <!--end::Table head-->
+                <!--begin::Table body-->
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="symbol symbol-50px me-3">
+                                    <img src="https://imgs.search.brave.com/TUt-ms-87XZptqEJwXKTh4kDjiREvrXEtezP6d2u1lM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MS8xMi8wOC80My9h/dWRpby0yOTQxNzUz/XzY0MC5qcGc" class="" alt="" />
+                                </div>
+                                <div class="d-flex justify-content-start flex-column">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Vintage Laughter Blast</a>
+                                    <span class="text-gray-500 fw-semibold d-block fs-7">Stand up Comedy</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-end pe-13">
+                            <span class="text-gray-600 fw-bold fs-6">$2,500</span>
+                        </td>
+                        <td class="text-end pe-0">
+                            <div id="kt_auction_widget_16_chart_1" class="h-50px mt-n8 pe-7" data-kt-chart-color="warning"></div>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$2,500</span>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$3,000 (John Doe)</span>
+                        </td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#bidModal">{% getIcon 'black-right' 'fs-5 text-gray-700' %}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="symbol symbol-50px me-3">
+                                    <img src="https://imgs.search.brave.com/TUt-ms-87XZptqEJwXKTh4kDjiREvrXEtezP6d2u1lM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MS8xMi8wOC80My9h/dWRpby0yOTQxNzUz/XzY0MC5qcGc" class="" alt="" />
+                                </div>
+                                <div class="d-flex justify-content-start flex-column">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Head Bang 2.0</a>
+                                    <span class="text-gray-500 fw-semibold d-block fs-7">Concert</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-end pe-13">
+                            <span class="text-gray-600 fw-bold fs-6">$5,000</span>
+                        </td>
+                        <td class="text-end pe-0">
+                            <div id="kt_auction_widget_16_chart_2" class="h-50px mt-n8 pe-7" data-kt-chart-color="success"></div>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$5,200</span>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$5,500 (Alice Smith)</span>
+                        </td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#bidModal">{% getIcon 'black-right' 'fs-5 text-gray-700' %}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="symbol symbol-50px me-3">
+                                    <img src="https://imgs.search.brave.com/TUt-ms-87XZptqEJwXKTh4kDjiREvrXEtezP6d2u1lM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MS8xMi8wOC80My9h/dWRpby0yOTQxNzUz/XzY0MC5qcGc" class="" alt="" />
+                                </div>
+                                <div class="d-flex justify-content-start flex-column">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Head Bang 2.0 VIP</a>
+                                    <span class="text-gray-500 fw-semibold d-block fs-7">Concert</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-end pe-13">
+                            <span class="text-gray-600 fw-bold fs-6">$1,200</span>
+                        </td>
+                        <td class="text-end pe-0">
+                            <div id="kt_auction_widget_16_chart_3" class="h-50px mt-n8 pe-7" data-kt-chart-color="danger"></div>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$1,300</span>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$1,500 (Eva Green)</span>
+                        </td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#bidModal">{% getIcon 'black-right' 'fs-5 text-gray-700' %}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="symbol symbol-50px me-3">
+                                    <img src="https://imgs.search.brave.com/TUt-ms-87XZptqEJwXKTh4kDjiREvrXEtezP6d2u1lM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MS8xMi8wOC80My9h/dWRpby0yOTQxNzUz/XzY0MC5qcGc" class="" alt="" />
+                                </div>
+                                <div class="d-flex justify-content-start flex-column">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Dhaka Attack Shooting</a>
+                                    <span class="text-gray-500 fw-semibold d-block fs-7">Experience</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-end pe-13">
+                            <span class="text-gray-600 fw-bold fs-6">$15,000</span>
+                        </td>
+                        <td class="text-end pe-0">
+                            <div id="kt_auction_widget_16_chart_4" class="h-50px mt-n8 pe-7" data-kt-chart-color="info"></div>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$15,500</span>
+                        </td>
+                        <td class="text-end pe-7">
+                            <span class="text-gray-600 fs-6">$16,000 (Mark Lee)</span>
+                        </td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#bidModal">{% getIcon 'black-right' 'fs-5 text-gray-700' %}</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <!--end::Table body-->
+            </table>
+            <!--end::Table-->
+        </div>
+        <!--end::Table container-->
+    </div>
+    <!--end::Tap pane-->
+    
+    <!-- Modal for placing a bid (Example) -->
+    <div class="modal fade" id="bidModal" tabindex="-1" aria-labelledby="bidModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bidModalLabel">Place Your Bid</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" class="form-control" placeholder="Enter your bid amount" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Place Bid</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--begin::Chart widget for Auctions-->
+<div class="card card-flush overflow-hidden h-lg-100">
+    <!--begin::Header-->
+    <div class="card-header pt-5">
+        <!--begin::Title-->
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label fw-bold text-gray-900">Auction Insights</span>
+            <span class="text-gray-500 mt-1 fw-semibold fs-6">Statistics for active ticket auctions</span>
+        </h3>
+        <!--end::Title-->
+        <!--begin::Toolbar-->
+        <div class="card-toolbar">
+            <!--begin::Daterangepicker-->
+            <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left" data-kt-daterangepicker-range="today" 
+                 class="btn btn-sm btn-light d-flex align-items-center px-4">
+                <!--begin::Display range-->
+                <div class="text-gray-600 fw-bold">Select Date Range</div>
+                <!--end::Display range-->
+                {% getIcon 'calendar-8' 'fs-1 ms-2 me-0' %}
+            </div>
+            <!--end::Daterangepicker-->
+        </div>
+        <!--end::Toolbar-->
+    </div>
+    <!--end::Header-->
+    <!--begin::Card body-->
+    <div class="card-body d-flex align-items-end p-0">
+        <!--begin::Chart-->
+        <div id="kt_charts_widget_36" class="min-h-auto w-100 ps-4 pe-6" style="height: 300px"></div>
+        <!--end::Chart-->
+    </div>
+    <!--end::Card body-->
+</div>
+<!--end::Chart widget for Auctions-->
+
+{% endblock content %}
+

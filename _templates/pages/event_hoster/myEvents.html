@@ -1,0 +1,178 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "My Events" %}{% endblock %}
+
+<style>
+  .events-container {
+    height: 400px; /* Adjust based on desired height */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .event-item .card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .event-item .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .event-status {
+    position: absolute;
+    top: 0;
+    start: 0;
+    m-2;
+  }
+
+  #event-details {
+    height: 400px;
+  }
+</style>
+
+{% block content %}
+
+<div class="container-fluid">
+  <!-- My Events Grid -->
+  <div class="row">
+    <div class="col-6">
+      <h3 class="text-gray-800 fw-bold mb-4">Current Events</h3>
+      <div class="events-container">
+        <div class="row" id="current-events-grid">
+          <!-- Dynamically generated current event items -->
+          <div class="col-md-6 mb-4 event-item" data-id="1">
+            <div class="card text-center shadow-sm p-3">
+              <!-- Image Section -->
+              <div class="card-img-top position-relative">
+                <img src="https://example.com/event-image.jpg" alt="Event Thumbnail" class="img-fluid rounded-top">
+                <div class="badge bg-success position-absolute m-2">Ongoing</div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="fw-semibold text-truncate" title="Music Concert">Music Concert</h5>
+                <p class="text-muted small mb-2">#ID12345</p>
+                <p class="text-dark fw-bold mb-3">December 10, 2024</p>
+                <button class="btn btn-primary btn-sm mt-auto">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat for more events -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <h3 class="text-gray-800 fw-bold mb-4">Past Events</h3>
+      <div class="events-container">
+        <div class="row" id="past-events-grid">
+          <!-- Dynamically generated past event items -->
+          <div class="col-md-6 mb-4 event-item" data-id="2">
+            <div class="card text-center shadow-sm p-3">
+              <!-- Image Section -->
+              <div class="card-img-top position-relative">
+                <img src="https://example.com/event-image.jpg" alt="Event Thumbnail" class="img-fluid rounded-top">
+                <div class="badge bg-secondary position-absolute m-2">Past</div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="fw-semibold text-truncate" title="Football Match">Football Match</h5>
+                <p class="text-muted small mb-2">#ID67890</p>
+                <p class="text-dark fw-bold mb-3">November 20, 2024</p>
+                <button class="btn btn-primary btn-sm mt-auto">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat for more events -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details Panel -->
+  <div class="row mt-5" id="event-details-section" style="display: none;">
+    <div class="col-12">
+      <div class="card card-flush h-lg-50 shadow-sm">
+        <div class="card-header pt-5">
+          <h4 class="card-title text-gray-800 fw-bold">Event Details</h4>
+        </div>
+        <div class="card-body">
+          <!-- Details -->
+          <div id="event-details">
+            <p><strong>Event:</strong> <span id="event-name">Select an event</span></p>
+            <p><strong>Date:</strong> <span id="event-date">-</span></p>
+            <p><strong>Description:</strong> <span id="event-description">-</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Sample data for events
+    const events = [
+      {
+        id: 1,
+        name: "Music Concert",
+        date: "2024-12-10",
+        description: "A live music concert featuring top artists.",
+        status: "ongoing",
+      },
+      {
+        id: 2,
+        name: "Football Match",
+        date: "2024-11-20",
+        description: "A thrilling football match between top teams.",
+        status: "past",
+      },
+      // Add more events
+    ];
+
+    // Event grid click event
+    const currentEventsGrid = document.getElementById("current-events-grid");
+    const pastEventsGrid = document.getElementById("past-events-grid");
+    const eventDetailsSection = document.getElementById("event-details-section");
+
+    // Combined click event for both grids
+    currentEventsGrid.addEventListener("click", (e) => {
+      const eventElement = e.target.closest(".event-item");
+      if (eventElement) {
+        const eventId = eventElement.dataset.id;
+        const event = events.find((e) => e.id === parseInt(eventId));
+        if (event) {
+          displayEventDetails(event);
+          eventDetailsSection.style.display = "block";
+        }
+      }
+    });
+
+    pastEventsGrid.addEventListener("click", (e) => {
+      const eventElement = e.target.closest(".event-item");
+      if (eventElement) {
+        const eventId = eventElement.dataset.id;
+        const event = events.find((e) => e.id === parseInt(eventId));
+        if (event) {
+          displayEventDetails(event);
+          eventDetailsSection.style.display = "block";
+        }
+      }
+    });
+
+    // Display event details
+    function displayEventDetails(event) {
+      document.getElementById("event-name").textContent = event.name;
+      document.getElementById("event-date").textContent = event.date;
+      document.getElementById("event-description").textContent = event.description;
+    }
+  });
+</script>
+
+{% endblock content %}

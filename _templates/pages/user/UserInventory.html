@@ -1,0 +1,183 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "Inventory" %}{% endblock %}
+
+<style>
+  .inventory-container {
+    height: 400px; /* Adjust based on desired height */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .ticket-item .card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ticket-item .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  #price-chart {
+    height: 300px;
+  }
+</style>
+
+{% block content %}
+
+<div class="container-fluid">
+  <!-- Inventory Grid -->
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-gray-800 fw-bold mb-4">Purchased Tickets</h3>
+      <div class="inventory-container">
+        <div class="row" id="inventory-grid">
+          <!-- Dynamically generated ticket items -->
+          <div class="col-md-3 mb-4 ticket-item" data-id="1">
+            <div class="card text-center shadow-sm p-3">
+                <!-- Image Section -->
+                <div class="card-img-top position-relative">
+                  <img src="https://imgs.search.brave.com/BuXsFKShnOj23jFhrEWsJ-PRrkG2-iNV9lFVfdba524/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzE0LzAy/LzM2MF9GXzEwOTE0/MDI2OF9pcGNiTjZB/cUhqdnJKblNrOFU2/andSZHdIMzBzYUYw/OC5qcGc" alt="Ticket Thumbnail" class="img-fluid rounded-top">
+                  <div class="badge bg-primary position-absolute top-0 start-0 m-2">New</div>
+                </div>
+              
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column align-items-center">
+                  <h5 class="fw-semibold text-truncate" title="Concert Ticket">Concert Ticket</h5>
+                  <p class="text-muted small mb-2">#ID12345</p>
+                  <p class="text-dark fw-bold mb-3">$50</p>
+                  <button class="btn btn-primary btn-sm mt-auto">View Details</button>
+                </div>
+              </div>
+              
+
+
+          <!-- Repeat for more tickets -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details Panel -->
+  <div class="row mt-5" id="details-section" style="display: none;">
+    <div class="col-12">
+      <div class="card card-flush h-lg-50 shadow-sm">
+        <div class="card-header pt-5">
+          <h4 class="card-title text-gray-800 fw-bold">Ticket Details</h4>
+        </div>
+        <div class="card-body">
+          <!-- Details -->
+          <div id="ticket-details">
+            <p><strong>Event:</strong> <span id="ticket-event">Select a ticket</span></p>
+            <p><strong>Date:</strong> <span id="ticket-date">-</span></p>
+            <p><strong>Price:</strong> <span id="ticket-price">-</span></p>
+          </div>
+          <!-- Chart -->
+          <div id="price-chart" class="mt-4">
+            <canvas id="priceChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Sample data for tickets
+    const tickets = [
+      {
+        id: 1,
+        event: "Concert Ticket",
+        date: "2024-12-10",
+        price: "$50",
+        priceHistory: [40, 45, 50, 55, 50],
+      },
+      {
+        id: 2,
+        event: "Football Match",
+        date: "2024-11-20",
+        price: "$30",
+        priceHistory: [25, 28, 30, 32, 30],
+      },
+      // Add more tickets
+    ];
+
+    // Inventory grid click event
+    const inventoryGrid = document.getElementById("inventory-grid");
+    const detailsSection = document.getElementById("details-section");
+
+    inventoryGrid.addEventListener("click", (e) => {
+      const ticketElement = e.target.closest(".ticket-item");
+      if (ticketElement) {
+        const ticketId = ticketElement.dataset.id;
+        const ticket = tickets.find((t) => t.id === parseInt(ticketId));
+        if (ticket) {
+          displayTicketDetails(ticket);
+          detailsSection.style.display = "block";
+        }
+      }
+    });
+
+    // Display ticket details
+    function displayTicketDetails(ticket) {
+      document.getElementById("ticket-event").textContent = ticket.event;
+      document.getElementById("ticket-date").textContent = ticket.date;
+      document.getElementById("ticket-price").textContent = ticket.price;
+
+      // Update chart
+      updatePriceChart(ticket.priceHistory);
+    }
+
+    // Initialize Chart.js
+    const ctx = document.getElementById("priceChart").getContext("2d");
+    const priceChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"], // Example months
+        datasets: [
+          {
+            label: "Price Over Time",
+            data: [],
+            borderColor: "#007BFF",
+            backgroundColor: "rgba(0,123,255,0.1)",
+            borderWidth: 2,
+            pointRadius: 3,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Price ($)",
+            },
+          },
+          x: {
+            title: {
+              display: true,
+              text: "Time",
+            },
+          },
+        },
+      },
+    });
+
+    // Update chart data
+    function updatePriceChart(priceHistory) {
+      priceChart.data.datasets[0].data = priceHistory;
+      priceChart.update();
+    }
+  });
+</script>
+
+{% endblock content %}

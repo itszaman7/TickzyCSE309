@@ -1,0 +1,132 @@
+<!--begin::Modal - Ticket Listing-->
+<div class="modal fade" id="kt_modal_ticket_listing" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Ticket Listing</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    {% getIcon 'cross' 'fs-1' %}
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_ticket_listing_stepper">
+                    <!--begin::Aside-->
+                    <div class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px">
+                        <!--begin::Nav-->
+                        <div class="stepper-nav ps-lg-10">
+                            <!--begin::Step 1-->
+                            <div class="stepper-item current" data-kt-stepper-element="nav">
+                                <div class="stepper-wrapper">
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">1</span>
+                                    </div>
+                                    <div class="stepper-label">
+                                        <h3 class="stepper-title">Event Details</h3>
+                                        <div class="stepper-desc">Provide event information</div>
+                                    </div>
+                                </div>
+                                <div class="stepper-line h-40px"></div>
+                            </div>
+                            <!--end::Step 1-->
+                            <!--begin::Step 2-->
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                                <div class="stepper-wrapper">
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">2</span>
+                                    </div>
+                                    <div class="stepper-label">
+                                        <h3 class="stepper-title">Ticket Types</h3>
+                                        <div class="stepper-desc">Define ticket categories</div>
+                                    </div>
+                                </div>
+                                <div class="stepper-line h-40px"></div>
+                            </div>
+                            <!--end::Step 2-->
+                            <!--begin::Step 3-->
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                                <div class="stepper-wrapper">
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">3</span>
+                                    </div>
+                                    <div class="stepper-label">
+                                        <h3 class="stepper-title">Pricing</h3>
+                                        <div class="stepper-desc">Set ticket prices</div>
+                                    </div>
+                                </div>
+                                <div class="stepper-line h-40px"></div>
+                            </div>
+                            <!--end::Step 3-->
+                            <!--begin::Step 4-->
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                                <div class="stepper-wrapper">
+                                    <div class="stepper-icon w-40px h-40px">
+                                        <i class="stepper-check fas fa-check"></i>
+                                        <span class="stepper-number">4</span>
+                                    </div>
+                                    <div class="stepper-label">
+                                        <h3 class="stepper-title">Publish</h3>
+                                        <div class="stepper-desc">Review and go live</div>
+                                    </div>
+                                </div>
+                                <div class="stepper-line h-40px"></div>
+                            </div>
+                            <!--end::Step 4-->
+                        </div>
+                        <!--end::Nav-->
+                    </div>
+                    <!--end::Aside-->
+                    <!--begin::Content-->
+                    <div class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <form class="form" novalidate="novalidate" id="kt_modal_ticket_listing_form">
+                            {% include 'partials/modals/ticket-listings/steps/_event_details.html' %}
+                            {% include 'partials/modals/ticket-listings/steps/_ticket_types.html' %}
+                            {% include 'partials/modals/ticket-listings/steps/_pricing.html' %}
+                            {% include 'partials/modals/ticket-listings/steps/_publish.html' %}
+                            <!--begin::Actions-->
+                            <div class="d-flex flex-stack pt-10">
+                                <div class="me-2">
+                                    <button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+                                        {% getIcon 'arrow-left' 'fs-3 me-1' %} Back
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="submit">
+                                        <span class="indicator-label">Submit {% getIcon 'arrow-right' 'fs-3 ms-2 me-0' %}</span>
+                                        <span class="indicator-progress">Please wait... 
+                                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">
+                                        Continue {% getIcon 'arrow-right' 'fs-3 ms-1 me-0' %}
+                                    </button>
+                                </div>
+                            </div>
+                            <!--end::Actions-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - Ticket Listing-->

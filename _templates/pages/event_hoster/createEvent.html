@@ -1,0 +1,247 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "Host an Event" %}{% endblock %}
+
+{% block content %}
+<!--begin::Card for hosting event-->
+
+<!--begin::Card widget for Create Event Advertisement-->
+<div class="card card-flush shadow-lg border-0 rounded-3">
+    <!--begin::Header-->
+    <div class="card-header bg-primary text-white text-center pt-5 pb-4">
+        <h3 class="fw-bold fs-2 mb-0">Create Your Event Now!</h3>
+        <span class="fs-6">Make it unforgettable!</span>
+    </div>
+    <!--end::Header-->
+    <!--begin::Card Body-->
+    <div class="card-body text-center p-5" style="background-image: url('https://imgs.search.brave.com/e-Aw28ig3QT9-vHbmiFBBVQSmWL-y7SKP6DLy-okars/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXN5/Y29uZi5jb20vYmxv/Zy9pbWFnZXMvMjAx/My0xMS0wNC1oYXBw/eS1jcm93ZC5qcGc'); background-size: cover; background-position: center;">
+        <!--begin::Event Details-->
+        <div class="mb-4">
+            <h5 class="fw-bold text-white">Host Your Event</h5>
+            <p class="text-white opacity-75">Join thousands of organizers and create an event that will be the talk of the town!</p>
+        </div>
+        <!--end::Event Details-->
+        <!--begin::Stats-->
+        <div class="d-flex justify-content-center mb-4">
+            <div class="text-center mx-3">
+                <span class="fs-6 fw-semibold text-gray-100">Event Date</span>
+                <div class="fw-bold text-warning">Feb 20, 2025</div>
+            </div>
+            <div class="text-center mx-3">
+                <span class="fs-6 fw-semibold text-gray-100">Location</span>
+                <div class="fw-bold text-warning">Grand Ballroom</div>
+            </div>
+        </div>
+        <!--end::Stats-->
+        <!--begin::Action Button-->
+        <a href="#" class="btn btn-warning text-white fw-semibold px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_ticket_listing">
+            Create Event Now <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+        </a>
+        <!--end::Action Button-->
+    </div>
+    <!--end::Card Body-->
+</div>
+<!--end::Card widget for Create Event Advertisement-->
+
+<!--end::Card widget for Create Event Advertisement-->
+
+<!--end::Card for hosting event-->
+<div>
+    <h1  style='margin: 10px'>Related Events for you to host</h1>
+</div>
+<!-- Modal: kt_modal_event_details -->
+
+<div class="row d-flex flex-wrap g-5 g-xl-10 mb-5 mb-xl-10">
+
+    <!--begin::Col-->
+    <div class="card card-flush h-100 me-5" style="width: 300px;">
+        <div class="card-body py-4">
+            <div class="row gx-2">
+                <!-- Event Image -->
+                <div class="col-12 mb-2">
+                    <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded" 
+                         style="background-image:url('https://imgs.search.brave.com/Dugiq5K9DdMIcDqjN9ObHdqChi1HaRKUlbNvqAX2kbc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8x/MS8xOC8xNS80NC9h/dWRpZW5jZS0xODM1/NDMxXzY0MC5qcGc'); height: 150px;">
+                    </div>
+                </div>
+                <!-- Event Details -->
+                <div class="col-12">
+                    <div class="d-flex flex-column">
+                        <!-- Card Title and Badge -->
+                        <div class="d-flex justify-content-between mb-2">
+                            <div>
+                                <h5 class="text-dark fw-bold fs-5 mb-0">High Revenue with Event Hosting</h5>
+                            </div>
+                            <span class="badge badge-light-primary py-1 px-2 fs-7">Available for Hosting</span>
+                        </div>
+
+                        <!-- Event Venue and Date -->
+                        <div class="d-flex align-items-end mb-2">
+                            <div class="symbol symbol-20px symbol-circle me-2">
+                                <img src="https://imgs.search.brave.com/yoXVkAkMBpjk8Qlq8FMfb4LBJb2QwzD6-g4gMRdGrKA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mbHV4/LWltYWdlLmNvbS9f/bmV4dC9pbWFnZT91/cmw9aHR0cHM6Ly9h/aS5mbHV4LWltYWdl/LmNvbS9mbHV4LzNh/YmRkOTZmLTE5Yjgt/NDY0Mi04ODk0LTAx/MWExZjljZDcxZi5q/cGcmdz0zODQwJnE9/NzU" alt="Venue" />
+                            </div>
+                            <span class="text-gray-500 fs-7">Tech Hub</span>
+                        </div>
+
+                        <!-- Event Stats: Price -->
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="symbol symbol-20px symbol-circle me-2">
+                                <span class="symbol-label bg-success fs-5 text-white">{% getIcon 'abstract-41' %}</span>
+                            </div>
+                            <span class="fw-bold text-gray-800 fs-6">$199.99</span>
+                        </div>
+
+                        <!-- Event Stats: Date and Attendees -->
+                        <div class="d-flex justify-content-between mt-2">
+                            <div>
+                                <span class="fs-7 text-gray-500">Date</span>
+                                <div class="fw-semibold text-gray-700">Feb 25, 2025</div>
+                            </div>
+                            <div>
+                                <span class="fs-7 text-gray-500">Attendees</span>
+                                <div class="fw-semibold text-gray-700">1000</div>
+                            </div>
+                        </div>
+
+                        <!-- Call to Action Button -->
+                        <div class="mt-3 text-center">
+                            <a href="#" class="btn btn-warning text-white fw-semibold fs-6 px-5 py-2">
+                                Create Event Now <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--begin::Col-->
+        <div class="card card-flush h-100 me-5" style="width: 300px;">
+            <div class="card-body py-4">
+                <div class="row gx-2">
+                    <!-- Event Image -->
+                    <div class="col-12 mb-2">
+                        <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded" 
+                             style="background-image:url(https://imgs.search.brave.com/Dugiq5K9DdMIcDqjN9ObHdqChi1HaRKUlbNvqAX2kbc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8x/MS8xOC8xNS80NC9h/dWRpZW5jZS0xODM1/NDMxXzY0MC5qcGc'); height: 150px;">
+                        </div>
+                    </div>
+                    <!-- Event Details -->
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <!-- Card Title and Badge -->
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <h5 class="text-dark fw-bold fs-5 mb-0">Your Ticket Selling Gateway</h5>
+                                </div>
+                                <span class="badge badge-light-primary py-1 px-2 fs-7">Available Now</span>
+                            </div>
+    
+                            <!-- Event Venue and Date -->
+                            <div class="d-flex align-items-end mb-2">
+                                <div class="symbol symbol-20px symbol-circle me-2">
+                                    <img src="https://imgs.search.brave.com/e-Aw28ig3QT9-vHbmiFBBVQSmWL-y7SKP6DLy-okars/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXN5/Y29uZi5jb20vYmxv/Zy9pbWFnZXMvMjAx/My0xMS0wNC1oYXBw/eS1jcm93ZC5qcGc" alt="Venue" />
+                                </div>
+                                <span class="text-gray-500 fs-7">Main Arena</span>
+                            </div>
+    
+                            <!-- Event Stats: Price -->
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="symbol symbol-20px symbol-circle me-2">
+                                    <span class="symbol-label bg-info fs-5 text-white">{% getIcon 'abstract-41' %}</span>
+                                </div>
+                                <span class="fw-bold text-gray-800 fs-6">$299.99</span>
+                            </div>
+    
+                            <!-- Event Stats: Date and Attendees -->
+                            <div class="d-flex justify-content-between mt-2">
+                                <div>
+                                    <span class="fs-7 text-gray-500">Date</span>
+                                    <div class="fw-semibold text-gray-700">Mar 5, 2025</div>
+                                </div>
+                                <div>
+                                    <span class="fs-7 text-gray-500">Attendees</span>
+                                    <div class="fw-semibold text-gray-700">500</div>
+                                </div>
+                            </div>
+    
+                            <!-- Call to Action Button -->
+                            <div class="mt-3 text-center">
+                                <a href="#" class="btn btn-primary text-white fw-semibold fs-6 px-5 py-2">
+                                    Start Selling Tickets <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <!--begin::Col-->
+        <div class="card card-flush h-100 me-5" style="width: 300px;">
+            <div class="card-body py-4">
+                <div class="row gx-2">
+                    <!-- Event Image -->
+                    <div class="col-12 mb-2">
+                        <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded" 
+                             style="background-image:url('https://imgs.search.brave.com/Dugiq5K9DdMIcDqjN9ObHdqChi1HaRKUlbNvqAX2kbc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8x/MS8xOC8xNS80NC9h/dWRpZW5jZS0xODM1/NDMxXzY0MC5qcGc'); height: 150px;">
+                        </div>
+                    </div>
+                    <!-- Event Details -->
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <!-- Card Title and Badge -->
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <h5 class="text-dark fw-bold fs-5 mb-0">Host an Unforgettable Event Today</h5>
+                                </div>
+                                <span class="badge badge-light-success py-1 px-2 fs-7">Now Available</span>
+                            </div>
+    
+                            <!-- Event Venue and Date -->
+                            <div class="d-flex align-items-end mb-2">
+                                <div class="symbol symbol-20px symbol-circle me-2">
+                                    <img src="https://imgs.search.brave.com/yoXVkAkMBpjk8Qlq8FMfb4LBJb2QwzD6-g4gMRdGrKA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mbHV4/LWltYWdlLmNvbS9f/bmV4dC9pbWFnZT91/cmw9aHR0cHM6Ly9h/aS5mbHV4LWltYWdl/LmNvbS9mbHV4LzNh/YmRkOTZmLTE5Yjgt/NDY0Mi04ODk0LTAx/MWExZjljZDcxZi5q/cGcmdz0zODQwJnE9/NzU" alt="Venue" />
+                                </div>
+                                <span class="text-gray-500 fs-7">Grand Hall</span>
+                            </div>
+    
+                            <!-- Event Stats: Price -->
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="symbol symbol-20px symbol-circle me-2">
+                                    <span class="symbol-label bg-danger fs-5 text-white">{% getIcon 'abstract-41' %}</span>
+                                </div>
+                                <span class="fw-bold text-gray-800 fs-6">$399.99</span>
+                            </div>
+    
+                            <!-- Event Stats: Date and Attendees -->
+                            <div class="d-flex justify-content-between mt-2">
+                                <div>
+                                    <span class="fs-7 text-gray-500">Date</span>
+                                    <div class="fw-semibold text-gray-700">Apr 12, 2025</div>
+                                </div>
+                                <div>
+                                    <span class="fs-7 text-gray-500">Attendees</span>
+                                    <div class="fw-semibold text-gray-700">1500</div>
+                                </div>
+                            </div>
+    
+                            <!-- Call to Action Button -->
+                            <div class="mt-3 text-center">
+                                <a href="#" class="btn btn-danger text-white fw-semibold fs-6 px-5 py-2">
+                                    Host Now <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+
+{% endblock content %}

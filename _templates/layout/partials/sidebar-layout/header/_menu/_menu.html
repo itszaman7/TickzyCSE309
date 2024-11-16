@@ -1,0 +1,172 @@
+<!--begin::Menu wrapper-->
+<div
+  class="app-header-menu app-header-mobile-drawer align-items-stretch"
+  data-kt-drawer="true"
+  data-kt-drawer-name="app-header-menu"
+  data-kt-drawer-activate="{default: true, lg: false}"
+  data-kt-drawer-overlay="true"
+  data-kt-drawer-width="250px"
+  data-kt-drawer-direction="end"
+  data-kt-drawer-toggle="#kt_app_header_menu_toggle"
+  data-kt-swapper="true"
+  data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
+  data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}"
+>
+  <!--begin::Menu-->
+  <div
+    class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
+    id="kt_app_header_menu"
+    data-kt-menu="true"
+  >
+    <!--begin:Menu item-->
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-title">Specials</span>
+        <span class="menu-arrow d-lg-none"></span>
+      </span>
+      <!--end:Menu link-->
+      <!--begin:Menu sub-->
+      <div
+        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px"
+      >
+        {% include './__dashboards.html' %}
+      </div>
+      <!--end:Menu sub-->
+    </div>
+    <!--end:Menu item-->
+
+    <!--begin:Menu item-->
+    {% comment %}
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item menu-lg-down-accordion me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-title">Pages</span>
+        <span class="menu-arrow d-lg-none"></span>
+      </span>
+      <!--end:Menu link-->
+      <!--begin:Menu sub-->
+      <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0">
+        {% include './__pages.html' %}
+      </div>
+      <!--end:Menu sub-->
+    </div>
+    {% endcomment %}
+    <!--end:Menu item-->
+
+    <!--end:Menu item-->
+    <!--begin:Menu item-->
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item menu-lg-down-accordion me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-title">Categories</span>
+        <span class="menu-arrow d-lg-none"></span>
+      </span>
+      <!--end:Menu link-->
+      <!--begin:Menu sub-->
+      <div
+        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-900px w-xxl-950px"
+      >
+        {% include './__layouts.html' %}
+      </div>
+      <!--end:Menu sub-->
+    </div>
+    <!--end:Menu item-->
+    <!--Extas-->
+    <!-- Host an Event -->
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item menu-lg-down-accordion me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-icon">{% getIcon 'calendar' 'fs-2' %}</span>
+        <span class="menu-title">Host an Event</span>
+      </span>
+      <!--end:Menu link-->
+    </div>
+
+    <!-- Find a Buddy -->
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item menu-lg-down-accordion me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-icon">{% getIcon 'lovely' 'fs-2' %}</span>
+        <span class="menu-title">Find a Buddy</span>
+      </span>
+      <!--end:Menu link-->
+    </div>
+
+    <!--end Extas-->
+    <!--begin:Menu item-->
+    <div
+      data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+      data-kt-menu-placement="bottom-start"
+      class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2"
+    >
+      <!--begin:Menu link-->
+      <span class="menu-link">
+        <span class="menu-icon">{% getIcon 'dollar' 'fs-2' %}</span>
+        <span class="menu-title">Start Selling</span>
+        <span class="menu-arrow d-lg-none"></span>
+      </span>
+      <!--end:Menu link-->
+      <!--begin:Menu sub-->
+      <div
+        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-200px"
+      >
+        <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/sell-ticket">
+            <span class="menu-icon">{% getIcon 'price-tag' 'fs-2' %}</span>
+            <span class="menu-title">Sell a Ticket</span>
+          </a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+        <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/learn-to-sell">
+            <span class="menu-icon">{% getIcon 'book' 'fs-2' %}</span>
+            <span class="menu-title">Learn to Sell</span>
+          </a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+        <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/fees-and-conditions">
+            <span class="menu-icon">{% getIcon 'some-files' 'fs-2' %}</span>
+            <span class="menu-title">Fees and Conditions</span>
+          </a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+      </div>
+      <!--end:Menu sub-->
+    </div>
+
+    <!--end:Menu item-->
+  </div>
+  <!--end::Menu-->
+</div>
+<!--end::Menu wrapper-->

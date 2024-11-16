@@ -1,0 +1,145 @@
+{% extends layout %}
+
+{% load i18n %}
+
+{% block title %}{% translate "My Events" %}{% endblock %}
+
+{% block content %}
+<!--begin::Table widget 14-->
+<div class="card card-flush h-md-100">
+	<!--begin::Header-->
+	<div class="card-header pt-7">
+		<!--begin::Title-->
+		<h3 class="card-title align-items-start flex-column">
+			<span class="card-label fw-bold text-gray-800">Even Earning Stats</span>
+			<span class="text-gray-500 mt-1 fw-semibold fs-6">Updated 10 minutes ago</span>
+		</h3>
+		<!--end::Title-->
+		<!--begin::Toolbar-->
+		<div class="card-toolbar">
+			<a href="#" class="btn btn-sm btn-light">View History</a>
+		</div>
+		<!--end::Toolbar-->
+	</div>
+	<!--end::Header-->
+	<!--begin::Body-->
+	<div class="card-body pt-6">
+		<!--begin::Table container-->
+		<div class="table-responsive">
+			<!--begin::Table-->
+			<table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+				<!--begin::Table head-->
+				<thead>
+					<tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
+						<th class="p-0 pb-3 min-w-175px text-start">EVENT NAME</th>
+						<th class="p-0 pb-3 min-w-100px text-end">SOLD TICKETS</th>
+						<th class="p-0 pb-3 min-w-100px text-end">REVENUE</th>
+						<th class="p-0 pb-3 min-w-100px text-end">TICKET PRICE</th>
+						<th class="p-0 pb-3 min-w-150px text-end">DATE</th>
+						<th class="p-0 pb-3 min-w-50px text-end">VIEW DETAILS</th>
+					</tr>
+				</thead>
+				<!--end::Table head-->
+				<!--begin::Table body-->
+				<tbody>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-3">
+									<img src="assets/media/stock/600x600/img-40.jpg" alt="Event Image" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Music Festival</a>
+									<span class="text-gray-500 fw-semibold d-block fs-7">By Jane Cooper</span>
+								</div>
+							</div>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">1200</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$60,000</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$50</span>
+						</td>
+						<td class="text-end pe-12">
+							<span class="text-gray-600 fw-bold fs-6">2024-12-10</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+								<i class="bi bi-arrow-right fs-2 text-gray-500"></i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-3">
+									<img src="assets/media/stock/600x600/img-38.jpg" alt="Event Image" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Rock Concert</a>
+									<span class="text-gray-500 fw-semibold d-block fs-7">By John Doe</span>
+								</div>
+							</div>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">800</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$40,000</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$50</span>
+						</td>
+						<td class="text-end pe-12">
+							<span class="text-gray-600 fw-bold fs-6">2024-11-20</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+								<i class="bi bi-arrow-right fs-2 text-gray-500"></i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-3">
+									<img src="assets/media/stock/600x600/img-41.jpg" alt="Event Image" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Tech Conference</a>
+									<span class="text-gray-500 fw-semibold d-block fs-7">By Sarah Lee</span>
+								</div>
+							</div>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">500</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$25,000</span>
+						</td>
+						<td class="text-end pe-0">
+							<span class="text-gray-600 fw-bold fs-6">$50</span>
+						</td>
+						<td class="text-end pe-12">
+							<span class="text-gray-600 fw-bold fs-6">2024-11-15</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+								<i class="bi bi-arrow-right fs-2 text-gray-500"></i>
+							</a>
+						</td>
+					</tr>
+					<!-- Repeat rows as needed -->
+				</tbody>
+				<!--end::Table body-->
+			</table>
+		</div>
+		<!--end::Table-->
+	</div>
+	<!--end: Card Body-->
+</div>
+<!--end::Table widget 14-->
+{% endblock content %}
